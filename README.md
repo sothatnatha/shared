@@ -15,15 +15,14 @@
 # Move user manager to group gadmin
 	- sudo adduser manager gadmin
 
-# Login user manger and create:
-Directories in root by user manager: 
-General (both group can full access & manager), 
-Sale (gacc cannot access), 
-Accounting (gsale cannot access)
-	Groups: gacc, gsale
-	Users in group gacc: acc1, acc2, acc3
-	Users in group gsale: sale1, sale2, sale3
-
+# Login user manger and create as below:
++ Directories in root by user manager: 
++ General (both group can full access & manager), 
++ Sale (gacc cannot access), 
++ Accounting (gsale cannot access)
++ Groups: gacc, gsale
++ Users in group gacc: acc1, acc2, acc3
++ Users in group gsale: sale1, sale2, sale3
 	- sudo login manager
 	- sudo mkdir -p /{General,Sale,Accounting}
 	- sudo addgroup gacc
