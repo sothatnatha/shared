@@ -101,7 +101,8 @@
 	- sudo apt install libpam-pwquality cracklib-runtime
 + Go to configure password:
 	- sudo vim /etc/pam.d/common-password
-	- z
++ Example:
+	- password requisite pam_pwquality.so retry=3 minlen=8 lcredit=-1 ucredit=-1 dcredit=-1 ocredit=-1
 # Pluggable Authentication Modules (PAM)
 	- retry=3: This option will prompt the user 3 times before exiting and returning an error.
 	- minlen=8: This specifies that the password cannot be less than 12 characters.
