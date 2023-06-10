@@ -94,3 +94,28 @@
 ### Optional (For check directory's permission, owner)
 	- ls -l / | grep -E 'Accounting|General|Sale'
 ------------------------------------------ End Linux Practice 5 ------------------------------------------
+
+----------Password policy------------------
+# Password Policy (Strong password)
++ Install: 
+	- sudo apt install libpam-pwquality cracklib-runtime
++ Go to configure password:
+	- sudo vim /etc/pam.d/common-password
+	- z
+# Pluggable Authentication Modules (PAM)
+	- retry=3: This option will prompt the user 3 times before exiting and returning an error.
+	- minlen=8: This specifies that the password cannot be less than 12 characters.
+	- ucredit=-1: The option requires at least one uppercase character in the password.
+	- lcredit=-1: The option requires at least one lowercase character in the password.
+	- dcredit=-1: This implies that the password should have at last a numeric character.
+	- ocredit=-1: The option requires at least one special character included in the password.
+	- difok=3: This implies that only a maximum of 3 character changes in the new password should be present in the old password.
+	- reject_username: The option rejects a password if it consists of the username either in its normal way or in reverse.
+	- enforce_for_root: This ensures that the password policies are adhered to even if it’s the root user configuring the passwords.
+	- gecoscheck=1  Reject password with account name
+
+
+
+
+
+
