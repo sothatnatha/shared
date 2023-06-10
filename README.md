@@ -1,6 +1,4 @@
 # shared
-# Sharing sources
-
 ------------------------------------------ Linux Practice5 ------------------------------------------
 # Create group gadmin
 	- sudo addgroup gadmin
