@@ -117,5 +117,33 @@
 ----------End Password policy------------------
 
 
+------------How to change DocumentRoot on Apache2!--------------
 
+How to change DocumentRoot on Apache2!
+
+Step 1
+	+ mkdir -p yourrootfolder
+	+ sudo chmod 777 yourrootfolder
+Step 2
+	+ cd /etc/apache2/sites-availables
+	+ Create new custom root file
+		- sudo touch my-custom.conf
+		- sudo vim my-custom.conf or sudo nano my-custom.conf
+		<VirtualHost *:80>
+        		<Directory /home/linux-username/yourrootfolder >
+                		Options Indexes FollowSymLinks
+                		AllowOverride None
+                		Require all granted
+        		</Directory>
+        		DocumentRoot /home/linux-username/yourrootfolder
+		</VirtualHost>
+		- Save this configuration.
+	+ Disable default site (000-defatault.conf)
+		- sudo a2dissite 000-defatault.conf
+	+ Enable new site (new configuration)
+		- sudo a2ensite my-custom.conf
+Step 3 
+	+ sudo systemctl restart apache2.service
+
+----------end How to change DocumentRoot on Apache2!-----------
 
