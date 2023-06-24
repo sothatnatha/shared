@@ -147,3 +147,13 @@ Step 3
 
 ----------end How to change DocumentRoot on Apache2!-----------
 
+
+# Fail Apache2 Service
+$ systemctl restart apache2
+$ journal -xe 
+$ sudo apt-get purge apache2
+$ sudo apt autoremove apache2
+$ sudo apt-get purge apache2
+$ sudo apt-get purge apache2*
+$ sudo apt-get install apache2
+$ sudo service apache2 start
